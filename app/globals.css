@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rose: #D4717E;
+  --rose-light: #F5D8DC;
+  --rose-bg: #FDF0F2;
+  --bleu: #5BA4CF;
+  --bleu-light: #D8EAF4;
+  --bleu-dark: #3A7CA8;
+  --bleu-bg: #EEF6FB;
+  --gris: #4A4D50;
+  --gris-light: #F0F1F2;
+  --gris-mid: #9A9C9E;
+  --blanc: #FAFAFA;
+  --noir: #1C1C1E;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--blanc);
+  color: var(--gris);
+  font-family: var(--font-dm-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-fraunces), serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "startupCommands": [
+    "npm install; npm run dev"
+  ],
+  "preview": {
+    "url": "http://localhost:3000"
+  },
+  "projectId": "15deeda6-c082-4318-9d83-b18c0e4d03b4",
+  "templateId": "any"
+}
