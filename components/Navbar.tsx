@@ -7,10 +7,36 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 // --- Simple SVG Icons ---
 const IconMenu = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x1="20" y1="12" y2="12"/><line x1="4" x1="20" y1="6" y2="6"/><line x1="4" x1="20" y1="18" y2="18"/></svg>
+  <svg 
+    width="24" 
+    height="24" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+  >
+    <line x1="4" y1="12" x2="20" y2="12"/>
+    <line x1="4" y1="6" x2="20" y2="6"/>
+    <line x1="4" y1="18" x2="20" y2="18"/>
+  </svg>
 )
+
 const IconX = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+  <svg 
+    width="24" 
+    height="24" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+  >
+    <path d="M18 6 6 18"/>
+    <path d="m6 6 12 12"/>
+  </svg>
 )
 
 const links = [
@@ -46,13 +72,11 @@ export function Navbar() {
             : 'bg-white border-slate-100 shadow-sm'
         } rounded-2xl px-5 md:px-8 h-[72px] flex items-center justify-between`}
       >
-        {/* Medical Accent Line */}
         <div 
           className="absolute top-0 left-12 right-12 h-[2px] opacity-20"
           style={{ backgroundColor: BRAND_LIGHT_BLUE }}
         />
 
-        {/* Logo Section - Height optimized to fit the new slim bar while remaining large */}
         <Link href="/" className="flex items-center transition-transform active:scale-95 flex-shrink-0 h-full py-2">
           <img 
             src="https://pub-85aceffc7f094aeeb5f4e65c0c3d3e04.r2.dev/photos/fulllogo.png" 
@@ -61,7 +85,6 @@ export function Navbar() {
           />
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-1">
           {links.map((link) => {
             const isActive = pathname === link.href
@@ -89,7 +112,6 @@ export function Navbar() {
           })}
         </div>
 
-        {/* CTA Button - Reduced padding and renamed */}
         <div className="flex items-center gap-4">
           <Link
             href="/contact"
@@ -99,7 +121,6 @@ export function Navbar() {
             Nous joindre
           </Link>
 
-          {/* Mobile Menu Toggle */}
           <button
             className="md:hidden p-2.5 text-slate-500 hover:bg-slate-50 rounded-xl transition-colors border border-slate-100"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -109,7 +130,6 @@ export function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu dropdown */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
